@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    
+    .container {
+      margin-top: 30px;
+    }
+    
+    .card {
+      border: none;
+    }
+    
+    .card-header {
+      background-color: #343a40;
+      color: #fff;
+      font-weight: bold;
+    }
+    
+    .form-control {
+      border-radius: 0;
+    }
+    
+    .btn-primary {
+      background-color: #343a40;
+      border-color: #343a40;
+    }
+    
+    .btn-primary:hover {
+      background-color: #23272b;
+      border-color: #23272b;
+    }
+    
+    .hastebin-container {
+      height: calc(100vh - 160px);
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: purple #e9ecef;
+    }
+    
+    .hastebin-container::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    .hastebin-container::-webkit-scrollbar-thumb {
+      background-color: purple;
+    }
+    
+    .hastebin-container::-webkit-scrollbar-track {
+      background-color: #e9ecef;
+    }
+    
+    .hastebin-textarea {
+      width: 100%;
+      height: 100%;
+      background-color: #e9ecef;
+      border: none;
+      resize: none;
+    }
+    
+    .hastebin-textarea:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-header text-center">
+            <h4>Hastebin</h4>
+          </div>
+          <div class="card-body">
+            <form id="create-form" method="post" action="/">
+              <div class="form-group">
+                <textarea id="code" name="code" class="form-control hastebin-textarea" rows="10" placeholder="Digite o seu código aqui..." required></textarea>
+              </div>
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary">Criar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-3 mt-4">
+        <div class="card">
+          <div class="card-header text-center">
+            <h4>Código Criado</h4>
+          </div>
+          <div class="card-body hastebin-container">
+            <pre id="code-output"><%= code %></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
